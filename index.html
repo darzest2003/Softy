@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Softy Cosmetics</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- =========================
+HEADER
+========================= -->
 
 <header>
 
 <div class="menu-btn" onclick="openMenu()">
-<i class="fa fa-bars"></i>
+
+<i class="fas fa-bars"></i>
+
 </div>
 
 <div class="logo">
@@ -31,7 +38,7 @@
 
 <div class="cart" onclick="showCart()">
 
-<i class="fa fa-shopping-cart"></i>
+<i class="fas fa-shopping-cart"></i>
 
 <span id="cartCount">0</span>
 
@@ -39,37 +46,59 @@
 
 </header>
 
-<!-- SIDEBAR -->
+<!-- =========================
+SIDEBAR
+========================= -->
 
 <div id="sidebar">
 
 <div class="close" onclick="closeMenu()">
 
-<i class="fa fa-times"></i>
+<i class="fas fa-times"></i>
 
 </div>
 
 <h2>Categories</h2>
 
-<a href="#" onclick="showCategory('all')">Home</a>
+<a href="#" onclick="showCategory('all')">
 
-<a href="#" onclick="showCategory('polish')">Nail Polish</a>
+Home
 
-<a href="#" onclick="showCategory('remover')">Nail Remover</a>
+</a>
 
-<a href="#" onclick="showCategory('lotion')">Soothing Lotion</a>
+<a href="#" onclick="showCategory('polish')">
+
+Nail Polish
+
+</a>
+
+<a href="#" onclick="showCategory('remover')">
+
+Nail Remover
+
+</a>
+
+<a href="#" onclick="showCategory('lotion')">
+
+Soothing Lotion
+
+</a>
 
 </div>
 
-<!-- HERO -->
+<!-- =========================
+HERO BANNER
+========================= -->
 
 <section class="hero">
 
-<img src="banner.png">
+<img src="banner.png" alt="Softy Banner">
 
 </section>
 
-<!-- SHIPPING -->
+<!-- =========================
+SHIPPING
+========================= -->
 
 <section class="shipping">
 
@@ -77,25 +106,138 @@
 
 <p>1 Item = Rs.120</p>
 
-<p>2-3 Items = Rs.180</p>
+<p>2 - 3 Items = Rs.180</p>
 
-<p>4-6 Items = Rs.220</p>
+<p>4 - 6 Items = Rs.220</p>
 
 <p>7+ Items = Rs.270</p>
 
-<p><b>Orders Above Rs.1500 = FREE SHIPPING</b></p>
+<p>
+
+<b>
+
+Orders Above Rs.1500 = FREE SHIPPING
+
+</b>
+
+</p>
 
 </section>
 
-<!-- PRODUCTS -->
+<!-- =========================
+PRODUCTS
+========================= -->
 
-<section class="products" id="products">
+<section
+class="products"
+id="products">
 
-<!-- JavaScript will load products here -->
+<!-- Products loaded from script.js -->
 
 </section>
 
-<!-- CART -->
+<!-- =========================
+PRODUCT DETAILS POPUP
+========================= -->
+
+<div
+class="product-popup"
+id="productPopup">
+
+<div class="popup-content">
+
+<span
+class="close"
+onclick="closeProduct()">
+
+&times;
+
+</span>
+
+<div class="product-slider">
+
+<button
+class="slider-btn prev"
+onclick="previousImage()">
+
+❮
+
+</button>
+
+<img
+id="popupImage"
+src="">
+
+<button
+class="slider-btn next"
+onclick="nextImage()">
+
+❯
+
+</button>
+
+</div>
+
+<h2 id="popupTitle">
+
+</h2>
+
+<p id="popupDescription">
+
+</p>
+
+<div
+class="popup-price"
+id="popupPrice">
+
+</div>
+
+<div class="qty-box">
+
+<button
+onclick="minusQty()">
+
+-
+
+</button>
+
+<span id="buyQty">
+
+1
+
+</span>
+
+<button
+onclick="plusQty()">
+
++
+
+</button>
+
+</div>
+
+<button
+class="buy-now"
+onclick="buyCurrentProduct()">
+
+Buy Now
+
+</button>
+
+<button
+class="add-cart"
+onclick="addToCart(currentProduct.id)">
+
+Add To Cart
+
+</button>
+
+</div>
+
+</div>
+<!-- =========================
+CART POPUP
+========================= -->
 
 <div class="cart-page" id="cartPage">
 
@@ -107,15 +249,21 @@
 
 </span>
 
-<h2>Your Cart</h2>
+<h2>Your Shopping Cart</h2>
 
-<div id="cartItems"></div>
+<div id="cartItems">
 
-<h3 id="totalPrice"></h3>
+</div>
 
-<button onclick="checkout()">
+<h3 id="totalPrice">
 
-Buy Now
+Total : Rs.0
+
+</h3>
+
+<button class="buy-now" onclick="checkout()">
+
+Proceed To Checkout
 
 </button>
 
@@ -123,7 +271,9 @@ Buy Now
 
 </div>
 
-<!-- ORDER -->
+<!-- =========================
+ORDER POPUP
+========================= -->
 
 <div class="order-popup" id="orderPopup">
 
@@ -137,37 +287,36 @@ onclick="closeOrder()">
 
 </span>
 
-<h2>Order Details</h2>
+<h2>
+
+Complete Your Order
+
+</h2>
 
 <form id="orderForm">
 
-<input type="text"
-
+<input
+type="text"
 placeholder="Full Name"
-
 required>
 
-<input type="tel"
-
+<input
+type="tel"
 placeholder="Contact Number"
-
 required>
 
-<input type="email"
-
-placeholder="Email"
-
+<input
+type="email"
+placeholder="Email Address"
 required>
 
 <textarea
-
 placeholder="Delivery Address"
-
 required>
 
 </textarea>
 
-<button>
+<button type="submit">
 
 Submit Order
 
@@ -179,25 +328,97 @@ Submit Order
 
 </div>
 
-<!-- WhatsApp -->
+<!-- =========================
+SUCCESS POPUP
+========================= -->
 
-<a class="whatsapp"
+<div class="success" id="successPopup">
 
+<i class="fas fa-check-circle"></i>
+
+<h2>
+
+Thank You!
+
+</h2>
+
+<p>
+
+Your order has been received successfully.
+
+</p>
+
+<p>
+
+Our team will contact you shortly.
+
+</p>
+
+</div>
+
+<!-- =========================
+WHATSAPP
+========================= -->
+
+<a
+class="whatsapp"
 href="https://wa.me/923366487540"
-
 target="_blank">
 
 <i class="fab fa-whatsapp"></i>
 
 </a>
 
-<!-- FOOTER -->
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
+<h2>
+
+Softy Cosmetics
+
+</h2>
+
+<p>
+
+Premium Nail Polish • Nail Remover • Soothing Lotion
+
+</p>
+
+<br>
+
+<p>
+
+Shipping Across Pakistan
+
+</p>
+
+<p>
+
+WhatsApp:
+0336-6487540
+
+</p>
+
+<p>
+
+Email:
+
+productssofty@gmail.com
+
+</p>
+
+<br>
+
+<p>
+
 © 2026 Softy Cosmetics
 
-All Rights Reserved
+All Rights Reserved.
+
+</p>
 
 </footer>
 
