@@ -592,7 +592,7 @@ Order Form + Google Sheets
 //==================================
 
 const SCRIPT_URL =
-"https://YOUR_GOOGLE_SCRIPT_WEB_APP_URL";
+"https://script.google.com/macros/s/AKfycbyGstdYv6e_L-xvTa2KDc72JhMy8mJuc6n_4wpaUZmKqA-8ehQwUFs4azn9m2npYnay/exec";
 
 //==================================
 // Order Number
