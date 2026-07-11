@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Softy Cosmetics</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="menu-btn" onclick="openMenu()">
+<i class="fa fa-bars"></i>
+</div>
+
+<div class="logo">
+
+<img src="logo.png" alt="Softy">
+
+</div>
+
+<div class="cart" onclick="showCart()">
+
+<i class="fa fa-shopping-cart"></i>
+
+<span id="cartCount">0</span>
+
+</div>
+
+</header>
+
+<!-- SIDEBAR -->
+
+<div id="sidebar">
+
+<div class="close" onclick="closeMenu()">
+
+<i class="fa fa-times"></i>
+
+</div>
+
+<h2>Categories</h2>
+
+<a href="#" onclick="showCategory('all')">Home</a>
+
+<a href="#" onclick="showCategory('polish')">Nail Polish</a>
+
+<a href="#" onclick="showCategory('remover')">Nail Remover</a>
+
+<a href="#" onclick="showCategory('lotion')">Soothing Lotion</a>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img src="banner.png">
+
+</section>
+
+<!-- SHIPPING -->
+
+<section class="shipping">
+
+<h3>Shipping Charges</h3>
+
+<p>1 Item = Rs.120</p>
+
+<p>2-3 Items = Rs.180</p>
+
+<p>4-6 Items = Rs.220</p>
+
+<p>7+ Items = Rs.270</p>
+
+<p><b>Orders Above Rs.1500 = FREE SHIPPING</b></p>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products" id="products">
+
+<!-- JavaScript will load products here -->
+
+</section>
+
+<!-- CART -->
+
+<div class="cart-page" id="cartPage">
+
+<div class="cart-box">
+
+<span class="close" onclick="closeCart()">
+
+&times;
+
+</span>
+
+<h2>Your Cart</h2>
+
+<div id="cartItems"></div>
+
+<h3 id="totalPrice"></h3>
+
+<button onclick="checkout()">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ORDER -->
+
+<div class="order-popup" id="orderPopup">
+
+<div class="order-box">
+
+<span class="close"
+
+onclick="closeOrder()">
+
+&times;
+
+</span>
+
+<h2>Order Details</h2>
+
+<form id="orderForm">
+
+<input type="text"
+
+placeholder="Full Name"
+
+required>
+
+<input type="tel"
+
+placeholder="Contact Number"
+
+required>
+
+<input type="email"
+
+placeholder="Email"
+
+required>
+
+<textarea
+
+placeholder="Delivery Address"
+
+required>
+
+</textarea>
+
+<button>
+
+Submit Order
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- WhatsApp -->
+
+<a class="whatsapp"
+
+href="https://wa.me/923366487540"
+
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Softy Cosmetics
+
+All Rights Reserved
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
