@@ -23,7 +23,8 @@ top:0;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
+height:90px;
+padding:10px 20px;
 background:#b30000;
 color:#fff;
 z-index:1000;
@@ -31,9 +32,8 @@ box-shadow:0 3px 10px rgba(0,0,0,.25);
 }
 
 .logo img{
-height:90px;
+height:80px;
 width:auto;
-object-fit:contain;
 display:block;
 }
 
@@ -236,7 +236,8 @@ transform:scale(1.08);
 @media(max-width:768px){
 
 .logo img{
-height:42px;
+height:65px;
+width:auto;
 }
 
 .products{
