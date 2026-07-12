@@ -614,13 +614,15 @@ Math.floor(Math.random()*900+100);
 // Submit Order
 //==================================
 
-const orderForm=document.getElementById("orderForm");
+window.addEventListener("load", function () {
 
-if(orderForm){
+    const orderForm = document.getElementById("orderForm");
 
-orderForm.addEventListener("submit",submitOrder);
+    if (orderForm) {
+        orderForm.addEventListener("submit", submitOrder);
+    }
 
-}
+});
 
 function submitOrder(e){
 
