@@ -706,35 +706,35 @@ sendToGoogleSheet(orderData);
 
 //==================================
 // Send To Google Sheet
-//==================================
+async function sendToGoogleSheet(data) {
 
-function sendToGoogleSheet(data){
+    try {
 
-fetch(SCRIPT_URL,{
+        const response = await fetch(SCRIPT_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-method:"POST",
+        const result = await response.text();
 
-headers:{
+        console.log("Response:", result);
 
-"Content-Type":"application/json"
+        if (!response.ok) {
+            throw new Error(result);
+        }
 
-},
+        orderSuccess(data);
 
-body:JSON.stringify(data)
+    } catch (error) {
 
-})
+        console.error(error);
 
-.then(()=>{
+        alert("Unable to submit order.\n\n" + error.message);
 
-orderSuccess(data);
-
-})
-
-.catch(()=>{
-
-alert("Unable to submit order.");
-
-});
+    }
 
 }
 
